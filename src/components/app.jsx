@@ -5,6 +5,8 @@ import Tareas from './tareas'
 
 import Lista from './todo/lista'
 
+import Estilos from './estilos/estilos'
+
 export function App() {
   return (
     // <React.Fragment>
@@ -17,7 +19,9 @@ export function App() {
     //   <Tareas />
     // </>
 
-    <Lista />
+    // <Lista />
+
+    <Estilos />
 
 
     // </Fragment>

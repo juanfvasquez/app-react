@@ -13,14 +13,25 @@ class Lista extends Component {
       texto: '',
       cargando: true
     }
+    this.interval = null
   }
 
   componentDidMount() {
     setTimeout(() => {
-      const str = window.localStorage.getItem(KEY)
+      const str = window.localStorage.getItem(KEY) || ''
       const todos = str.length > 0 ? JSON.parse(str) : []
       this.setState({ todos, cargando: false })
     }, 2000)
+
+    // this.interval = setInterval(() => {
+    //   this.crearTareaRandom()
+    // }, 5000)
+  }
+
+  componentWillUnmount() {
+    if (this.invertal) {
+      clearInterval(this.interval)
+    }
   }
 
   render() {
@@ -82,6 +93,16 @@ class Lista extends Component {
   guardarLista = todos => {
     const str = JSON.stringify(todos)
     window.localStorage.setItem(KEY, str)
+  }
+
+  crearTareaRandom = () => {
+    const id = Math.floor(Math.random() * 100)
+    const todo = { texto: `Tarea ${id}`, completado: false }
+    this.setState((state, props) => {
+      const nuevaLista = [...state.todos, todo]
+      this.guardarLista(nuevaLista)
+      return { todos: nuevaLista }
+    })
   }
 }
 
