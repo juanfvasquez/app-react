@@ -3,17 +3,21 @@ import React, { Fragment } from 'react'
 import ListaElementos from './lista'
 import Tareas from './tareas'
 
+import Lista from './todo/lista'
+
 export function App() {
   return (
     // <React.Fragment>
     // <Fragment>
 
 
-    <>
-      <h3>Lista de elementos</h3>
-      {/* <ListaElementos /> */}
-      <Tareas />
-    </>
+    // <>
+    //   <h3>Lista de elementos</h3>
+    //   {/* <ListaElementos /> */}
+    //   <Tareas />
+    // </>
+
+    <Lista />
 
 
     // </Fragment>
