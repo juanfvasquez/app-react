@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react'
 
 import ListaElementos from './lista'
-import Tareas from './tareas'
+// import Tareas from './tareas'
 
 import Lista from './todo/lista'
 
 import Estilos from './estilos/estilos'
+
+import {Cuenta} from './hooks/click'
+import {Tareas} from './hooks/tareas'
 
 export function App() {
   return (
@@ -21,7 +24,9 @@ export function App() {
 
     // <Lista />
 
-    <Estilos />
+    // <Estilos />
+    // <Cuenta />
+    <Tareas />
 
 
     // </Fragment>
