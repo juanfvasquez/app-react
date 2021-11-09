@@ -11,6 +11,7 @@ import {
 import { Inicio } from './pages/inicio'
 import { Contacto } from './pages/contacto'
 import { Nosotros } from './pages/nosotros'
+import { Pokemon } from './pages/pokemon'
 
 export function App() {
   return (
@@ -31,6 +32,9 @@ export function App() {
           </Route>
           <Route path="/contacto">
             <Contacto />
+          </Route>
+          <Route path="/pokemon/:nombre">
+            <Pokemon />
           </Route>
         </Switch>
       </Router>
