@@ -1,49 +1,39 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
-import ListaElementos from './lista'
-// import Tareas from './tareas'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom"
 
-import Lista from './todo/lista'
-
-import Estilos from './estilos/estilos'
-
-import {Cuenta} from './hooks/click'
-import {Tareas} from './hooks/tareas'
+import { Inicio } from './pages/inicio'
+import { Contacto } from './pages/contacto'
+import { Nosotros } from './pages/nosotros'
 
 export function App() {
   return (
-    // <React.Fragment>
-    // <Fragment>
-
-
-    // <>
-    //   <h3>Lista de elementos</h3>
-    //   {/* <ListaElementos /> */}
-    //   <Tareas />
-    // </>
-
-    // <Lista />
-
-    // <Estilos />
-    // <Cuenta />
-    <Tareas />
-
-
-    // </Fragment>
-    // </React.Fragment>
+    <>
+      <Router>
+        <div className="btn-group">
+          <Link to="/" class="btn btn-dark mt-3">Inicio</Link>
+          <Link to="/nosotros" class="btn btn-dark mt-3">Nosotros</Link>
+          <Link to="/contacto" class="btn btn-dark mt-3">Contacto</Link>
+        </div>
+        <hr />
+        <Switch>
+          <Route path="/" exact>
+            <Inicio />
+          </Route>
+          <Route path="/nosotros">
+            <Nosotros />
+          </Route>
+          <Route path="/contacto">
+            <Contacto />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   )
 }
-
-// export function App2() {
-//   return <h4>Aplicación 2</h4>
-// }
-
-// export const App3 = () => <h4>Con Arrow Functions</h4>
-
-// export default function App4() {
-//   return <h4>Export default</h4>
-// }
-
-// const App5 = () => {}
-
-// export default App5
