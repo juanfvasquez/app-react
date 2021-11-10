@@ -13,6 +13,7 @@ import { Contacto } from './pages/contacto'
 import { Nosotros } from './pages/nosotros'
 import { Pokemon } from './pages/pokemon'
 import { Form } from './form/form'
+import { Main } from './ejemplo-redux/main'
 
 export function App() {
   return (
@@ -26,7 +27,7 @@ export function App() {
         <hr />
         <Switch>
           <Route path="/" exact>
-            <Form />
+            <Main />
           </Route>
           <Route path="/nosotros">
             <Nosotros />
