@@ -3,6 +3,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 // import { bindActionCreators } from 'redux'
 import { depositar, retirar } from '../../redux/actions/monto'
+import { setUser } from '../../redux/actions/user'
 
 import { Componente } from './componente'
 
@@ -14,11 +15,17 @@ export function Main() {
   const clickDepositar = () => {
     const monto = 10
     dispatch(depositar(monto))
+    actualizarUser()
   }
 
   const clickRetirar = () => {
     const monto = 10
     dispatch(retirar(monto))
+  }
+
+  const actualizarUser = () => {
+    const user = { nombre: 'Juan'}
+    dispatch(setUser(user))
   }
 
   return (
